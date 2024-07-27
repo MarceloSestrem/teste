@@ -121,7 +121,7 @@ namespace Teste {
         // let p2 = pins.analogReadPin(AnalogPin.P1);
         // let p3 = pins.analogReadPin(AnalogPin.P2);
         if (tresa == Tressensores.white_white_white) {
-            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1)  && pins.analogReadPin(AnalogPin.P2) ) {
+            if (pins.analogReadPin(AnalogPin.P0)>= m && pins.analogReadPin(AnalogPin.P1)>= 700  && pins.analogReadPin(AnalogPin.P2)>= 700 ) {
                 return true;
             } else {
                 return false;
