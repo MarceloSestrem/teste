@@ -121,37 +121,37 @@ namespace Teste {
         // let p2 = pins.analogReadPin(AnalogPin.P1);
         // let p3 = pins.analogReadPin(AnalogPin.P2);
         if (tresa == Tressensores.white_white_white) {
-            if (pins.analogReadPin(AnalogPin.P0)>= m && pins.analogReadPin(AnalogPin.P1)>= 700  && pins.analogReadPin(AnalogPin.P2)>= 700 ) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.analogReadPin(AnalogPin.P2) <= m ) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tressensores.white_black_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == m && pins.analogReadPin(AnalogPin.P1) == m && pins.analogReadPin(AnalogPin.P2) == m) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) <= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tressensores.black_white_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == 0 && pins.analogReadPin(AnalogPin.P1) && pins.digitalReadPin(DigitalPin.P2) == 1) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) <= m && pins.digitalReadPin(DigitalPin.P2) <= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tressensores.black_black_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == 1 && pins.analogReadPin(AnalogPin.P1) && pins.analogReadPin(AnalogPin.P2) == 1) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) <= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tressensores.white_black_black) {
-            if (pins.analogReadPin(AnalogPin.P0) == 1 && pins.analogReadPin(AnalogPin.P1) && pins.analogReadPin(AnalogPin.P2) == 0) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) >= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tressensores.black_black_black) {
-            if (pins.analogReadPin(AnalogPin.P0) == 1 && pins.analogReadPin(AnalogPin.P1) && pins.analogReadPin(AnalogPin.P2) == 0) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) >= m && pins.analogReadPin(AnalogPin.P2) >= m) {
                 return true;
             } else {
                 return false;
@@ -163,32 +163,32 @@ namespace Teste {
 
 
     //% weight=79
-    //% blockId="doissensoresa" block="Detectando a linha Analógica %Doissensores"
-    export function readDoisa(doisa: Doissensores): boolean {
+    //% blockId="doissensoresa" block="Detectando a linha Analógica %Doissensores | Média %m"
+    export function readDoisa(doisa: Doissensores, m: number): boolean {
 
         // let p1 = pins.analogReadPin(AnalogPin.P0);
         // let p2 = pins.analogReadPin(AnalogPin.P1);
 
         if (doisa == Doissensores.white_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == 0 && pins.analogReadPin(AnalogPin.P1) == 0) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) <= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Doissensores.white_black) {
-            if (pins.analogReadPin(AnalogPin.P0) == 1 && pins.analogReadPin(AnalogPin.P1) == 0) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1) >= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Doissensores.black_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == 0 && pins.analogReadPin(AnalogPin.P1) == 1) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) <= m) {
                 return true;
             } else {
                 return false;
             }
         } else if (doisa == Doissensores.black_black) {
-            if (pins.analogReadPin(AnalogPin.P0) == 1 && pins.analogReadPin(AnalogPin.P1) == 1) {
+            if (pins.analogReadPin(AnalogPin.P0) >= m && pins.analogReadPin(AnalogPin.P1) >= m) {
                 return true;
             } else {
                 return false;
