@@ -113,20 +113,21 @@ namespace Teste {
     }
     
     //% weight=79
-    //% blockId="tresssensoresanalog" block="Detectando a linha Analógica %Tressensores"
-    export function readtresa(tresa: Tressensores): boolean {
+    //% blockId="tresssensoresanalog" block="Detectando a linha Analógica %Tressensores| Média: %m"
+    //% m.min=0 m.max=1023
+    export function readtresa(tresa: Tressensores, m: number): boolean {
 
         // let p1 = pins.analogReadPin(AnalogPin.P0);
         // let p2 = pins.analogReadPin(AnalogPin.P1);
         // let p3 = pins.analogReadPin(AnalogPin.P2);
         if (tresa == Tressensores.white_white_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == 0 && pins.analogReadPin(AnalogPin.P1) && pins.analogReadPin(AnalogPin.P2) == 0) {
+            if (pins.analogReadPin(AnalogPin.P0) == m && pins.analogReadPin(AnalogPin.P1) == m && pins.analogReadPin(AnalogPin.P2) == m) {
                 return true;
             } else {
                 return false;
             }
         } else if (tresa == Tressensores.white_black_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == 1 && pins.analogReadPin(AnalogPin.P1) && pins.analogReadPin(AnalogPin.P2) == 0) {
+            if (pins.analogReadPin(AnalogPin.P0) == m && pins.analogReadPin(AnalogPin.P1) == m && pins.analogReadPin(AnalogPin.P2) == m) {
                 return true;
             } else {
                 return false;
