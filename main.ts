@@ -34,7 +34,7 @@ namespace Teste {
         // let p2 = pins.digitalReadPin(DigitalPin.P1);
         // let p3 = pins.digitalReadPin(DigitalPin.P2);
         if (tres ==  Tressensores.white_white_white) {
-            if (pins.digitalReadPin(DigitalPin.P0) == 0 && pins.digitalReadPin(DigitalPin.P1) && pins.digitalReadPin(DigitalPin.P2) == 0) {
+            if (pins.digitalReadPin(DigitalPin.P0) != 0 && pins.digitalReadPin(DigitalPin.P1)!= 0 && pins.digitalReadPin(DigitalPin.P2) != 0) {
                 return true;
             } else {
                 return false;
@@ -121,7 +121,7 @@ namespace Teste {
         // let p2 = pins.analogReadPin(AnalogPin.P1);
         // let p3 = pins.analogReadPin(AnalogPin.P2);
         if (tresa == Tressensores.white_white_white) {
-            if (pins.analogReadPin(AnalogPin.P0) == m && pins.analogReadPin(AnalogPin.P1) == m && pins.analogReadPin(AnalogPin.P2) == m) {
+            if (pins.analogReadPin(AnalogPin.P0) <= m && pins.analogReadPin(AnalogPin.P1)  && pins.analogReadPin(AnalogPin.P2) ) {
                 return true;
             } else {
                 return false;
